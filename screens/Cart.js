@@ -1,366 +1,130 @@
-import React from "react"
-import {View, Text,Image, TouchableOpacity} from "react-native"
-import { Ionicons,FontAwesome, } from '@expo/vector-icons';
+import React from 'react'
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import { Feather } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
+import { EvilIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
+export default function Cart({navigation}){
 
-export  default function Home() {
+    const CartItem = (props) => {
+        
     return (
-    
-     <View
-     style={{
-         backgroundColor: "white",
-         flex:1,
-         paddingTop:55,
-         paddingHorizontal:20,
-         fontFamily:'sans-serif',
-        marginLeft:400,
-        width:600,
-        height:1000,
-        
-        marginTop:20
-     }}
-     >
-         <View style={{flexDirection:"row", justifyContent:"space-between",alignItems:"left"}}>
-         <Ionicons name="arrow-back-outline" size={20} color="black" style={{marginLeft:0}}></Ionicons>
-         <Text style={{fontWeight:"bold",fontSize:20,paddingRight:250,marginTop:-15}}>Cart List <br></br> <Text style={{fontWeight:"bold", fontSize:15, color:"grey"}}>(3 items)</Text></Text>
-           
-           
-         </View>
+            <View style={{flexDirection:'row'}}>
 
-         
-        
-      <View style={{flexDirection:"row",textAlign:"center",borderRadius:10,marginBottom:30,marginTop:20}}>
-         <TouchableOpacity
-        
-        style={{
-        backgroundColor: "#DDDD",
-        borderRadius:10,
-        width:220,
-        height:200,
-        flexDirection:"row"
-        
-       
-    }}
-      >
-        <Image source={{uri: 'https://images.pexels.com/photos/2798288/pexels-photo-2798288.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}}   
-               style={{ width:'100%', height:'100%',borderRadius:10,}}  />
-                 
-        <View style={{justifyContent:"space-evenly",}} >
+            <Image 
+            style={{
+                padding:40,
+                backgroundColor:'rgb(224,224,224)',
+                width:100, 
+                height:100, 
+                marginLeft: 30,
+                marginTop:40,
+                borderRadius:10
+                }}
 
-        <Text style={{color:"black",fontWeight:"bold",fontSize:20,textAlign:"left",paddingLeft:20,paddingBottom:60}}>Pinarello Bike </Text>
-        <View>
-        <Text style={{fontWeight:"bold",color:"grey",fontSize:15,marginBottom:60}}>Mountain Bike</Text>
-        </View>
-        <View>
-        <Text style={{color:"orange",fontWeight:"bold",fontSize:20,paddingTop:-25}}>$ <Text style={{fontWeight:"bold",color:"black",fontSize:20}}>1,700.00</Text></Text>
-        
-        </View>
+            source={{uri:props.image}}
+            />
 
-        <View>
-          <TouchableOpacity
-           style={{
-            borderWidth:1,
-            borderColor:'rgba(0,0,0,0.2)',
-            alignItems:'center',
-            justifyContent:'center',
-            width:30,
-            height:30,
-            backgroundColor:'#fff',
-            borderRadius:50,
-            position:"absolute",
-            top:-210,
-            right:-190
-          }}
-          
-          >
-          <Ionicons name="trash-outline" size={20} color="orange" style={{  borderRadius:20 }}></Ionicons>
-          </TouchableOpacity>
-        
-        </View>
-
-        <View style={{flexDirection:"row"}}>
-          
-          
-          
-          <Ionicons name="remove-circle" size={30}  style={{  borderRadius:20,position:"absolute",top:-30,right:-90}}></Ionicons>
-          <Text style={{  position:"absolute",top:-30,right:-140, fontSize:20,fontWeight:"bold"}}>1</Text>
-          <Ionicons name="add-circle-sharp" size={30} color="orange" style={{  borderRadius:20,position:"absolute",top:-30,right:-200}}></Ionicons>
-         
-        
-        </View>
-        </View>
-        
-        
-        
-        </TouchableOpacity>
-       
-       
-         </View>
-
-         <View style={{flexDirection:"row",textAlign:"center",borderRadius:10,marginBottom:30,marginTop:20}}>
-         <TouchableOpacity
-        
-        style={{
-        backgroundColor: "#DDDD",
-        borderRadius:10,
-        width:220,
-        height:200,
-        flexDirection:"row"
-        
-       
-    }}
-      >
-        <Image source={{uri: 'https://images.pexels.com/photos/2611675/pexels-photo-2611675.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}}   
-               style={{ width:'100%', height:'100%',borderRadius:10,}}  />
-                 
-        <View style={{justifyContent:"space-evenly",}} >
-
-        <Text style={{color:"black",fontWeight:"bold",fontSize:20,textAlign:"left",paddingLeft:20,paddingBottom:60}}>Brompton Bike </Text>
-        <View>
-        <Text style={{fontWeight:"bold",color:"grey",fontSize:15,marginBottom:60,paddingRight:50}}>Road Bike</Text>
-        </View>
-        <View>
-        <Text style={{color:"orange",fontWeight:"bold",fontSize:20,paddingTop:-25,paddingRight:35}}>$ <Text style={{fontWeight:"bold",color:"black",fontSize:20}}>1,700.00</Text></Text>
-        
-        </View>
-
-        <View>
-          <TouchableOpacity
-           style={{
-            borderWidth:1,
-            borderColor:'rgba(0,0,0,0.2)',
-            alignItems:'center',
-            justifyContent:'center',
-            width:30,
-            height:30,
-            backgroundColor:'#fff',
-            borderRadius:50,
-            position:"absolute",
-            top:-210,
-            right:-190
-          }}
-          
-          >
-          <Ionicons name="trash-outline" size={20} color="orange" style={{  borderRadius:20 }}></Ionicons>
-          </TouchableOpacity>
-        
-        </View>
-
-        <View style={{flexDirection:"row"}}>
-          
-          
-          
-          <Ionicons name="remove-circle" size={30}  style={{  borderRadius:20,position:"absolute",top:-30,right:-90}}></Ionicons>
-          <Text style={{  position:"absolute",top:-30,right:-140, fontSize:20,fontWeight:"bold"}}>1</Text>
-          <Ionicons name="add-circle-sharp" size={30} color="orange" style={{  borderRadius:20,position:"absolute",top:-30,right:-190}}></Ionicons>
-         
-        
-        </View>
-        </View>
-        
-        
-        
-        </TouchableOpacity>
-       
-       
-         </View>
-        <View style={{flexDirection:"row",textAlign:"center",borderRadius:10,marginBottom:30,marginTop:20}}>
-         <TouchableOpacity
-        
-        style={{
-        backgroundColor: "#DDDD",
-        borderRadius:10,
-        width:220,
-        height:200,
-        flexDirection:"row"
-        
-       
-    }}
-      >
-        <Image source={{uri:'https://images.pexels.com/photos/3068658/pexels-photo-3068658.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}}   
-               style={{ width:'100%', height:'100%',borderRadius:10,}}  />
-                 
-        <View style={{justifyContent:"space-evenly",}} >
-
-        <Text style={{color:"black",fontWeight:"bold",fontSize:20,textAlign:"left",paddingLeft:20,paddingBottom:60}}>Pinarello Bike </Text>
-        <View>
-        <Text style={{fontWeight:"bold",color:"grey",fontSize:15,marginBottom:60,paddingRight:35}}>Urban Bike</Text>
-        </View>
-        <View>
-        <Text style={{color:"orange",fontWeight:"bold",fontSize:20,paddingTop:-25,paddingRight:20}}>$ <Text style={{fontWeight:"bold",color:"black",fontSize:20}}>1,200.00</Text></Text>
-        
-        </View>
-
-        <View>
-          <TouchableOpacity
-           style={{
-            borderWidth:1,
-            borderColor:'rgba(0,0,0,0.2)',
-            alignItems:'center',
-            justifyContent:'center',
-            width:30,
-            height:30,
-            backgroundColor:'#fff',
-            borderRadius:50,
-            position:"absolute",
-            top:-210,
-            right:-190
-          }}
-          
-          >
-          <Ionicons name="trash-outline" size={20} color="orange" style={{  borderRadius:20 }}></Ionicons>
-          </TouchableOpacity>
-        
-        </View>
-
-        <View style={{flexDirection:"row"}}>
-          
-          
-          
-          <Ionicons name="remove-circle" size={30}  style={{  borderRadius:20,position:"absolute",top:-30,right:-100}}></Ionicons>
-          <Text style={{  position:"absolute",top:-30,right:-140, fontSize:20,fontWeight:"bold"}}>1</Text>
-          <Ionicons name="add-circle-sharp" size={30} color="orange" style={{  borderRadius:20,position:"absolute",top:-30,right:-200}}></Ionicons>
-         
-        
-        </View>
-        </View>
-        
-        
-        
-        </TouchableOpacity>
-        </View>
-        
-         
-         
-      <View>
-        <TouchableOpacity
-        style={{
-          backgroundColor: "grey",
-         paddingTop:0,
-        paddingHorizontal:20,
-        fontFamily:'sans-serif',
-         width:580,
-        borderRadius:20,
-        backgroundColor:"#d0d3d4"
-       
-       }}
-        >
-          <View style={{flexDirection:"row",marginTop:10}}>
-            <View>
-              <Text style={{color:"grey",fontWeight:"bold"}}>Subtotal</Text>
-            </View>
-            <View>
-            <Text style={{color:"#f5b041",paddingLeft:400}}>$</Text>
-            </View>
-            <View>
-            <Text style={{color:" #d0d3d4 ",paddingLeft:5,fontWeight:"bold"}}>3,400.00</Text>
-            </View>
-          </View>
-
-          <View style={{flexDirection:"row",marginTop:10,}}>
-            <View>
-              <Text style={{color:"grey",fontWeight:"bold"}}>Shipping fee</Text>
-            </View>
-            <View>
-            <Text style={{color:"#f5b041",paddingLeft:374}}>$</Text>
-            </View>
-            <View>
-            <Text style={{color:" #d0d3d4 ",paddingLeft:15,fontWeight:"bold"}}>100.00</Text>
             
-            </View>
+            <View style={{flexDirection:'column'}}>
+
             
-          </View>
-          <Text>------------------------------------------------------------------------------------------</Text>
-          <View style={{flexDirection:"row",marginTop:10}}>
-              <View><Text style={{fontWeight:"bold"}}>Total</Text></View>
-              <View>
-              <Text style={{color:"#f5b041",paddingLeft:424}}>$</Text>
-              </View>
-              <View>
-              <Text style={{color:"black",paddingLeft:8, fontWeight:"bold"}}>3,500.00</Text> 
-              </View>
-              
-                         
-          </View>
-        </TouchableOpacity>
-      </View>
-        
-      <TouchableOpacity
-        
-        style={{
-        
-        padding: 10,
-        paddingHorizontal:60,
-        marginTop:20,
-        marginLeft:50,
-        borderRadius:10,
-        flexDirection:"row",
-        Width:600,
-        backgroundColor:"#f5b041",
-        justifyContent:"center"
-       
-    }}
-      >
-       
-     
-    
-       <Text>Proceed to checkout</Text>
-        
-        </TouchableOpacity>
+            <Text style={{marginTop:50, marginLeft:30, fontWeight:'bold', fontSize:20}}>{props.title}</Text>
+            <Text style={{marginTop:10, marginLeft:30}}>{props.description}</Text>
+        <Text style={{marginTop:10, marginLeft:30, color:"orange"}}>$<Text style={{color:"black", fontSize:20, fontWeight:'bold'}}>{props.price}</Text></Text>
+                
+            </View>
 
+            <View style={{flexDirection:'column'}}>
+            <EvilIcons name="trash" size={24} color="rgb(204,102,0)"  style={{marginTop:50, marginLeft:70}}/>
+
+            <View style={{flexDirection:"row"}}>
+            <TouchableOpacity>
+            <AntDesign name="minuscircle" size={24} color="black" style={{marginTop:30}} />
+            </TouchableOpacity>
+            <Text style={{marginTop:30, marginLeft:20, fontWeight:'bold', fontSize:20}}>1</Text>
+            <TouchableOpacity>
+            <AntDesign name="pluscircle" size={24} color="rgb(204,102,0)" style={{marginTop:29, marginLeft:20}} />
+            </TouchableOpacity>
+            </View>
+        </View>
+        </View>
        
 
-         <View style={{justifyContent:"center",alignItems:"center", marginTop:100,position:"relative" }} >
-         <Ionicons name="mic-circle-sharp" size={40} color="black" style={{margin:0,position: 'absolute',top:-35,borderRadius:20,shadowColor:"#DDDD",shadowOffset:{width:0,height:2},shadowRadius:3}} ></Ionicons>
-         </View >
-
-         
-        
-        
-         
-         <View style={{flexDirection:"row",marginTop:3}}>
-           
-           <TouchableOpacity
-
-        
-        style={{
-        backgroundColor: "#FFFF",
-        marginTop:0,
-        borderBottomLeftRadius:5,
-        opacity:0.8,
-        width:530,
-        height:35
-        
-      }}
-        
-          
-   
-     >
-        <Ionicons name="home" size={20} color="orange" style={{marginLeft:40,marginTop:8}}></Ionicons>
-       
-       </TouchableOpacity>
-
-       <TouchableOpacity
-        
-        style={{
-        backgroundColor: "#FFFF",
-        marginTop:0,
-        borderBottomRightRadius:5,
-        opacity:0.8,
-      }}
-        
-          
-   
-     >
-         <FontAwesome name="shopping-bag" size={20} color="orange" style={{marginRight:40,marginTop:8}} ></FontAwesome>
-       
-       </TouchableOpacity>
-         </View>
       
-         
+    )}
+
+
+    const {goBack} = navigation;
+    return (
         
         
-              
-     </View>      
-    );
-  }
+        <View style={{flex:1}}>
+    <View style={{marginTop:70, marginLeft:20, flexDirection:'row'}}>
+        <TouchableOpacity onPress= {()=>goBack()
+        }>
+        <Feather name="arrow-left" size={24} color="black" />
+        </TouchableOpacity>
+
+        <View style={{flexDirection:'column'}}>
+        <Text style={{
+            marginLeft: 100,
+            fontSize:24,
+            fontWeight:"bold"
+        }}>
+            Cart List
+        </Text>
+        <Text style={{marginLeft:120}}>(3 items)</Text>
+       
+        </View>   
+    </View>
+
+    <View>
+    <CartItem description="Mountain Bike" price="41,700.00" title="School girl" image="https://image.made-in-china.com/2f0j00wVGrDuJnSdgO/Children-s-Bicycle-6-8-10-12-15-Years-Old-Stroller-Girl-s-16182022-Inch-Primary-and-Middle-School-Student-Bike.jpg" />
+    <CartItem description="Urban Bike" price="12,180.00" title="KFC" image="https://thumbs.dreamstime.com/z/kfc-online-food-order-delivery-bike-kfc-online-food-order-delivery-bike-219801816.jpg" />
+    <CartItem description="Road Bike" price="400.00" title="Dirt Bike" image ="http://pulpmx.com/app/uploads/2020/09/2eBnLc5A.jpeg" />
+    </View>
+
+   <View style={{margin:7, borderRadius:30, padding:50, backgroundColor:"rgb(160,160,160)", alignItems:"center",justifyContent:"space-between", flexDirection:"row"}}>
+   <Text style={{justifyContent:"space-between", fontSize:20, color:"grey"}}>Sub-Total </Text>
+   <Text style={{justifyContent:"space-between",  fontSize:25}}>$54,280.00</Text>
+   </View>
+   
+       
+        <TouchableOpacity>
+        <View style={{backgroundColor:"rgb(204,102,0)", padding:20, margin:5, borderRadius:15}}>
+        <Text style={{marginTop:0, fontWeight:'bold', color:"white", textAlign:'center', fontSize:17}}>Proceed to Checkout</Text>
+        
+        </View>
+        </TouchableOpacity>
+
+       
+        <View style={{backgroundColor:'rgb(224,224,224)',width:1000,height:80, bottom:0}}>
+    <View style={{flexDirection:"row"}}>
+
+    <TouchableOpacity onPress={()=>{
+        navigation.navigate("Home")
+    }}>
+    <Ionicons name="home-outline" size={30} color="black" style={{marginTop:20, marginLeft:30}} />
+</TouchableOpacity>
+        <FontAwesome name="microphone" size={30} color="white" style={{
+        marginBottom:0,
+         marginLeft:120,
+         backgroundColor:"black",
+         padding:17,
+         borderRadius:27,
+         borderColor:"black",
+         borderWidth:1,
+         overflow:'hidden'
+         }}/>
+            <TouchableOpacity>
+         <FontAwesome5 name="shopping-bag" size={26} color="orange"  style={{marginLeft:110, marginTop:20}} />
+        </TouchableOpacity>
+    </View>   
+    </View> 
+    </View>
+    )
+}
